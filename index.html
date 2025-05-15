@@ -139,10 +139,13 @@
           📍 Adresse de la propriété à vérifier :
           <br><br>
           <button id="copy-address-button" onclick="copyAddress()" style="background: none; border: none; font-weight: bold; font-size: 16px; cursor: pointer; color: #007BFF;">
-            123 Rue Principale, Laval 📋
+            📋 123 Rue Principale, Laval
           </button>
+          <div id="copy-confirmation" style="display: none; font-size: 0.9em; color: green; margin-top: 5px;">
+            Adresse copiée !
+          </div>
           <br><br>
-          <small>⚠️ Lors de l'ouverture des outils ci-dessous, copiez et collez cette adresse manuellement dans la barre de recherche de chaque outil.</small>
+          <small>Lors de l'ouverture des outils ci-dessous, copiez et collez cette adresse manuellement dans la barre de recherche de chaque outil.</small>
         </div>
       `;
 
@@ -212,12 +215,16 @@
 
       navigator.clipboard.writeText(addressText)
         .then(() => {
-          alert('Adresse copiée dans le presse-papiers !');
+          const confirmation = document.getElementById('copy-confirmation');
+          confirmation.style.display = 'block';
+          setTimeout(() => {
+            confirmation.style.display = 'none';
+          }, 2000); // Hide again after 2 seconds
         })
         .catch(err => {
           console.error('Erreur de copie : ', err);
         });
-    }
+      }
     
   </script>
 
