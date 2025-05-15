@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Outil de vérification de propriétés</title>
@@ -93,7 +93,7 @@
 
   .checkbox-group {
     display: flex;
-    flex-direction: column; /* stack vertically on small screens */
+    flex-direction: column;
     gap: 10px;
   }
 
@@ -109,191 +109,174 @@
     font-weight: bold;
   }
 
-  .high {
-    color: #d9534f; /* red */
+  .high { color: #d9534f; }
+  .medium { color: #f0ad4e; }
+  .low { color: #5cb85c; }
+
+  #error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
   }
 
-  .medium {
-    color: #f0ad4e; /* orange */
-  }
-
-  .low {
-    color: #5cb85c; /* green */
-  }
-
-  /* Mobile-specific improvements */
   @media (max-width: 600px) {
-    body {
-      font-size: 16px;
-      padding: 15px;
-    }
-
-    input[type="text"], select {
-      font-size: 16px;
-    }
-
-    label {
-      font-size: 16px;
-    }
-
-    button {
-      font-size: 16px;
-      padding: 12px;
-    }
-
-    .address-banner {
-      font-size: 16px;
-      padding: 18px;
-    }
-
-    a {
-      font-size: 16px;
-    }
-
-    small {
-      font-size: 14px;
-    }
+    body { font-size: 16px; padding: 15px; }
+    input[type="text"], select { font-size: 16px; }
+    label { font-size: 16px; }
+    button { font-size: 16px; padding: 12px; }
+    .address-banner { font-size: 16px; padding: 18px; }
+    a { font-size: 16px; }
+    small { font-size: 14px; }
   }
 </style>
-
 </head>
+
 <body>
 
-  <h1>Outil de vérification de propriétés</h1>
+<h1>Outil de vérification de propriétés</h1>
 
-  <form id="verifyForm">
-    <label for="address"><strong>Entrez l'adresse de la propriété :</strong></label>
-    <input type="text" id="address" placeholder="Ex : 123 Rue Principale, Laval" required>
+<form id="verifyForm">
+  <label for="address"><strong>Entrez l'adresse de la propriété :</strong></label>
+  <input type="text" id="address" placeholder="Ex : 123 Rue Principale, Laval" required>
 
-    <p><strong>Sélectionnez les catégories de risques que vous souhaitez vérifier :</strong></p>
-    <div class="checkbox-group" style="width: 100%;">
+  <p><strong>Sélectionnez les catégories de risques que vous souhaitez vérifier :</strong></p>
+
+  <fieldset id="checkboxes-group" style="border: none; padding: 0; margin-top: 10px;">
+    <div class="checkbox-group">
       <label><input type="checkbox" name="category" value="flood"> Inondation <span class="severity high">(Élevé)</span></label>
       <label><input type="checkbox" name="category" value="contamination"> Contamination du sol <span class="severity high">(Élevé)</span></label>
       <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau <span class="severity medium">(Moyen)</span></label>
       <label><input type="checkbox" name="category" value="radon"> Radon <span class="severity medium">(Moyen)</span></label>
       <label><input type="checkbox" name="category" value="pipelines"> Pipelines <span class="severity low">(Faible)</span></label>
       <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme <span class="severity low">(Faible)</span></label>
-
-      <small style="display: block; text-align: right; margin-top: 20px;">
-        <a href="risques.html" target="_blank">🔎 Plus d'information sur la classification des risques</a>
-      </small>
     </div>
-  
-    </br>
 
-    <button type="submit">Vérifier la propriété</button>
-  </form>
+    <div id="error-message">
+      Veuillez sélectionner au moins une catégorie à vérifier.
+    </div>
 
-  <div id="results" class="result"></div>
+    <small style="display: block; text-align: right; margin-top: 20px;">
+      <a href="risques.html" target="_blank">🔎 Plus d'information sur la classification des risques</a>
+    </small>
+  </fieldset>
 
-  <script>
-    const form = document.getElementById('verifyForm');
-    const resultsDiv = document.getElementById('results');
+  <br>
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+  <button type="submit">Vérifier la propriété</button>
+</form>
 
-      const address = document.getElementById('address').value.trim();
-      const selectedCategories = [...document.querySelectorAll('input[name="category"]:checked')].map(e => e.value);
+<div id="results" class="result"></div>
 
-      if (selectedCategories.length === 0) {
-        alert('Sélectionnez au moins une catégorie à vérifier.');
-        return;
-      }
+<script>
+const form = document.getElementById('verifyForm');
+const resultsDiv = document.getElementById('results');
 
-      let output = `
-        <div class="address-banner">
-          📍 Adresse de la propriété à vérifier
-          <br>
-          <button id="copy-address-button" onclick="copyAddress()" style="background: none; border: none; font-weight: bold; font-size: 16px; cursor: pointer; color: #007BFF;">
-            📋 123 Rue Principale, Laval
-          </button>
-          <div id="copy-confirmation" style="display: none; font-size: 0.9em; color: green; margin-top: 5px;">
-            Adresse copiée!
-          </div>
-          <br>
-          <small>Lors de l'ouverture des outils ci-dessous, copiez et collez cette adresse manuellement dans la barre de recherche de chaque outil.</small>
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const address = document.getElementById('address').value.trim();
+  const selectedCategories = [...document.querySelectorAll('input[name="category"]:checked')].map(e => e.value);
+  const errorMessage = document.getElementById('error-message');
+
+  if (selectedCategories.length === 0) {
+    errorMessage.style.display = 'block';
+    return;
+  } else {
+    errorMessage.style.display = 'none';
+  }
+
+  let output = `
+    <div class="address-banner">
+      📍 Adresse de la propriété à vérifier :
+      <br><br>
+      <button id="copy-address-button" onclick="copyAddress()" style="background: none; border: none; font-weight: bold; font-size: 16px; cursor: pointer; color: #007BFF;">
+        ${address} 📋
+      </button>
+      <div id="copy-confirmation" style="display: none; font-size: 0.9em; color: green; margin-top: 5px;">
+        Adresse copiée !
+      </div>
+      <br><br>
+      <small>⚠️ Lors de l'ouverture des outils ci-dessous, copiez et collez cette adresse manuellement dans la barre de recherche de chaque outil.</small>
+    </div>
+  `;
+
+  selectedCategories.forEach(category => {
+    if (category === 'flood') {
+      output += `
+        <div class="category">
+          <h3>🌊 Risque d'inondation</h3>
+          <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/carte-esri/index.html" target="_blank">Vérifiez les zones inondables (Carte du QC)</a></p>
+          <small>Collez votre adresse dans la barre de recherche de la carte une fois chargée.</small>
         </div>
       `;
+    }
+    if (category === 'contamination') {
+      output += `
+        <div class="category">
+          <h3>🧪 Contamination du sol</h3>
+          <p><a href="https://www.pes1.enviroweb.gouv.qc.ca/AtlasPublic/CartesPubliques/cartesmddelcc.html?cfg=TerrainsContamines.json" target="_blank">Carte des terrains contaminés (Québec)</a></p>
+          <p><a href="https://map-carte.tbs-sct.gc.ca/map-carte/fcsi-rscf/map-carte.aspx?Language=FR&qid=544002" target="_blank">Carte des sites contaminés fédéraux (Canada)</a></p>
+          <small>Localisez votre propriété manuellement en zoomant sur la carte.</small>
+        </div>
+      `;
+    }
+    if (category === 'pipelines') {
+      output += `
+        <div class="category">
+          <h3>🛢️ Pipelines</h3>
+          <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Vérifiez la présence de pipelines près de la propriété</a></p>
+          <small>Zoomez sur la zone de votre propriété pour vérifier la présence de pipelines.</small>
+        </div>
+      `;
+    }
+    if (category === 'urbanism') {
+      output += `
+        <div class="category">
+          <h3>🏘️ Règlements d'urbanisme</h3>
+          <p><a href="https://info-reglements.laval.ca/recherche" target="_blank">Recherche des règlements d'urbanisme</a></p>
+          <small>Recherchez par numéro civique et nom de rue après avoir ouvert l'outil.</small>
+        </div>
+      `;
+    }
+    if (category === 'lead') {
+      output += `
+        <div class="category">
+          <h3>🚰 Présence de plomb dans l'eau (Montréal)</h3>
+          <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Vérifiez la présence d'entrées d'eau en plomb</a></p>
+          <small>Entrez votre adresse pour vérifier la présence éventuelle de tuyaux en plomb dans votre secteur.</small>
+        </div>
+      `;
+    }
+    if (category === 'radon') {
+      output += `
+        <div class="category">
+          <h3>🏠 Risque de radon</h3>
+          <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">Comprendre les risques liés au radon</a></p>
+          <small>Risque général basé sur le code postal ou la zone géographique — pas de recherche par adresse spécifique disponible pour l'instant.</small>
+        </div>
+      `;
+    }
+  });
 
-      selectedCategories.forEach(category => {
-        if (category === 'flood') {
-          output += `
-            <div class="category">
-              <h3>🌊 Risque d'inondation</h3>
-              <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/carte-esri/index.html" target="_blank">Vérifiez les zones inondables (Carte du QC)</a></p>
-              <small>Collez votre adresse dans la barre de recherche de la carte une fois chargée.</small>
-            </div>
-          `;
-        }
-        if (category === 'contamination') {
-          output += `
-            <div class="category">
-              <h3>🧪 Contamination du sol</h3>
-              <p><a href="https://www.pes1.enviroweb.gouv.qc.ca/AtlasPublic/CartesPubliques/cartesmddelcc.html?cfg=TerrainsContamines.json" target="_blank">Carte des terrains contaminés (Québec)</a></p>
-              <p><a href="https://map-carte.tbs-sct.gc.ca/map-carte/fcsi-rscf/map-carte.aspx?Language=FR&qid=544002" target="_blank">Carte des sites contaminés fédéraux (Canada)</a></p>
-              <small>Localisez votre propriété manuellement en zoomant sur la carte.</small>
-            </div>
-          `;
-        }
-        if (category === 'pipelines') {
-          output += `
-            <div class="category">
-              <h3>🛢️ Pipelines</h3>
-              <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Vérifiez la présence de pipelines près de la propriété</a></p>
-              <small>Zoomez sur la zone de votre propriété pour vérifier la présence de pipelines.</small>
-            </div>
-          `;
-        }
-        if (category === 'urbanism') {
-          output += `
-            <div class="category">
-              <h3>🏘️ Règlements d'urbanisme</h3>
-              <p><a href="https://info-reglements.laval.ca/recherche" target="_blank">Recherche des règlements d'urbanisme</a></p>
-              <small>Recherchez par numéro civique et nom de rue après avoir ouvert l'outil.</small>
-            </div>
-          `;
-        }
-        if (category === 'lead') {
-          output += `
-            <div class="category">
-              <h3>🚰 Présence de plomb dans l'eau (Montréal)</h3>
-              <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Vérifiez la présence d'entrées d'eau en plomb</a></p>
-              <small>Entrez votre adresse pour vérifier la présence éventuelle de tuyaux en plomb dans votre secteur.</small>
-            </div>
-          `;
-        }
-        if (category === 'radon') {
-          output += `
-            <div class="category">
-              <h3>🏠 Risque de radon</h3>
-              <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">Comprendre les risques liés au radon</a></p>
-              <small>Risque général basé sur le code postal ou la zone géographique — pas de recherche par adresse spécifique disponible pour l'instant.</small>
-            </div>
-          `;
-        }
-      });
+  resultsDiv.innerHTML = output;
+});
 
-      resultsDiv.innerHTML = output;
+function copyAddress() {
+  const addressText = document.getElementById('copy-address-button').innerText.replace('📋', '').trim();
+  navigator.clipboard.writeText(addressText)
+    .then(() => {
+      const confirmation = document.getElementById('copy-confirmation');
+      confirmation.style.display = 'block';
+      setTimeout(() => {
+        confirmation.style.display = 'none';
+      }, 2000);
+    })
+    .catch(err => {
+      console.error('Erreur de copie : ', err);
     });
-
-    function copyAddress() {
-      const addressText = document.getElementById('copy-address-button').innerText.replace('📋', '').trim();
-
-      navigator.clipboard.writeText(addressText)
-        .then(() => {
-          const confirmation = document.getElementById('copy-confirmation');
-          confirmation.style.display = 'block';
-          setTimeout(() => {
-            confirmation.style.display = 'none';
-          }, 2000); // Hide again after 2 seconds
-        })
-        .catch(err => {
-          console.error('Erreur de copie : ', err);
-        });
-      }
-    
-  </script>
+}
+</script>
 
 </body>
 </html>
