@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Property Verification Tool</title>
+  <title>Outil de vérification des risques de propriétés</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -68,21 +68,21 @@
 </head>
 <body>
 
-  <h1>Property Verification Tool</h1>
+  <h1>Outil de vérification des risques de propriétés</h1>
 
   <form id="verifyForm">
-    <label for="address">Enter Property Address:</label>
-    <input type="text" id="address" placeholder="Ex: 123 Rue Principale, Laval" required>
+    <label for="address">Entrez l'adresse de la propriété :</label>
+    <input type="text" id="address" placeholder="Ex : 123 Rue Principale, Laval" required>
 
-    <p>Select what you want to verify:</p>
-    <label><input type="checkbox" name="category" value="flood"> Flood Risk</label>
-    <label><input type="checkbox" name="category" value="contamination"> Soil Contamination</label>
+    <p>Sélectionnez les catégories de risques que vous souhaitez vérifier :</p>
+    <label><input type="checkbox" name="category" value="flood"> Risque d'inondation</label>
+    <label><input type="checkbox" name="category" value="contamination"> Contamination du sol</label>
     <label><input type="checkbox" name="category" value="pipelines"> Pipelines</label>
-    <label><input type="checkbox" name="category" value="urbanism"> Urbanism Rules</label>
-    <label><input type="checkbox" name="category" value="lead"> Lead Pipes</label>
-    <label><input type="checkbox" name="category" value="radon"> Radon Risk</label><br><br>
+    <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme</label>
+    <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau</label>
+    <label><input type="checkbox" name="category" value="radon"> Risque de radon</label><br><br>
 
-    <button type="submit">Verify Property</button>
+    <button type="submit">Vérifier la propriété</button>
   </form>
 
   <div id="results" class="result"></div>
@@ -98,14 +98,14 @@
       const selectedCategories = [...document.querySelectorAll('input[name="category"]:checked')].map(e => e.value);
 
       if (selectedCategories.length === 0) {
-        alert('Please select at least one category to verify.');
+        alert('Sélectionnez au moins une catégorie à vérifier.');
         return;
       }
 
       let output = `
         <div class="address-banner">
-          📍 Property Address to Verify: <br><br> ${address} <br><br>
-          <small>⚠️ When opening the tools below, copy and paste this address manually inside each tool’s search bar.</small>
+          📍 Adresse de la propriété à vérifier :<br><br> ${address} <br><br>
+          <small>⚠️ Lors de l'ouverture des outils ci-dessous, copiez et collez cette adresse manuellement dans la barre de recherche de chaque outil.</small>
         </div>
       `;
 
@@ -113,19 +113,19 @@
         if (category === 'flood') {
           output += `
             <div class="category">
-              <h3>🌊 Flood Risk</h3>
-              <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/carte-esri/index.html" target="_blank">Check Flood Zones (QC Map)</a></p>
-              <small>Paste your address in the map's search bar once loaded.</small>
+              <h3>🌊 Risque d'inondation</h3>
+              <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/carte-esri/index.html" target="_blank">Vérifiez les zones inondables (Carte du QC)</a></p>
+              <small>Collez votre adresse dans la barre de recherche de la carte une fois chargée.</small>
             </div>
           `;
         }
         if (category === 'contamination') {
           output += `
             <div class="category">
-              <h3>🧪 Soil Contamination</h3>
-              <p><a href="https://www.pes1.enviroweb.gouv.qc.ca/AtlasPublic/CartesPubliques/cartesmddelcc.html?cfg=TerrainsContamines.json" target="_blank">Contaminated Lands Map (Quebec)</a></p>
-              <p><a href="https://map-carte.tbs-sct.gc.ca/map-carte/fcsi-rscf/map-carte.aspx?Language=FR&qid=544002" target="_blank">Federal Contamination Sites Map (Canada)</a></p>
-              <small>Locate your property manually by zooming in and searching your area.</small>
+              <h3>🧪 Contamination du sol</h3>
+              <p><a href="https://www.pes1.enviroweb.gouv.qc.ca/AtlasPublic/CartesPubliques/cartesmddelcc.html?cfg=TerrainsContamines.json" target="_blank">Carte des terrains contaminés (Québec)</a></p>
+              <p><a href="https://map-carte.tbs-sct.gc.ca/map-carte/fcsi-rscf/map-carte.aspx?Language=FR&qid=544002" target="_blank">Carte des sites contaminés fédéraux (Canada)</a></p>
+              <small>Localisez votre propriété manuellement en zoomant sur la carte.</small>
             </div>
           `;
         }
@@ -133,35 +133,35 @@
           output += `
             <div class="category">
               <h3>🛢️ Pipelines</h3>
-              <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Check Pipelines Near Property</a></p>
-              <small>Zoom to your property area to verify presence of pipelines.</small>
+              <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Vérifiez la présence de pipelines près de la propriété</a></p>
+              <small>Zoomez sur la zone de votre propriété pour vérifier la présence de pipelines.</small>
             </div>
           `;
         }
         if (category === 'urbanism') {
           output += `
             <div class="category">
-              <h3>🏘️ Urbanism Rules</h3>
-              <p><a href="https://info-reglements.laval.ca/recherche" target="_blank">Urban Planning Rules Lookup (Laval Example)</a></p>
-              <small>Search by civic number and street name after opening the tool.</small>
+              <h3>🏘️ Règlements d'urbanisme</h3>
+              <p><a href="https://info-reglements.laval.ca/recherche" target="_blank">Recherche des règlements d'urbanisme</a></p>
+              <small>Recherchez par numéro civique et nom de rue après avoir ouvert l'outil.</small>
             </div>
           `;
         }
         if (category === 'lead') {
           output += `
             <div class="category">
-              <h3>🚰 Lead Pipes Risk (Montreal)</h3>
-              <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Check for Lead Water Entries</a></p>
-              <small>Enter your address to check if lead pipes are present in the sector.</small>
+              <h3>🚰 Présence de plomb dans l'eau (Montréal)</h3>
+              <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Vérifiez la présence d'entrées d'eau en plomb</a></p>
+              <small>Entrez votre adresse pour vérifier la présence éventuelle de tuyaux en plomb dans votre secteur.</small>
             </div>
           `;
         }
         if (category === 'radon') {
           output += `
             <div class="category">
-              <h3>🏠 Radon Risk</h3>
-              <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">Understand Radon Risks</a></p>
-              <small>General risk based on postal code or geographic zone — no specific address lookup available yet.</small>
+              <h3>🏠 Risque de radon</h3>
+              <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">Comprendre les risques liés au radon</a></p>
+              <small>Risque général basé sur le code postal ou la zone géographique — pas de recherche par adresse spécifique disponible pour l'instant.</small>
             </div>
           `;
         }
