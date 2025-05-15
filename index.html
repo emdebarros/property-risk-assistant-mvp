@@ -1,94 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Outil de vérification de propriétés</title>
-  <style>
+<style>
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-size: 18px;
+    background-color: #f9f9f9;
+  }
+
+  input[type="text"], select {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  label {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 17px;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .result {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .category {
+    margin-top: 30px;
+  }
+
+  a {
+    color: #007BFF;
+    text-decoration: underline;
+    font-size: 17px;
+  }
+
+  small {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    color: gray;
+  }
+
+  .address-banner {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column; /* stack vertically on small screens */
+    gap: 15px;
+  }
+
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .severity {
+    margin-left: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  .high {
+    color: #d9534f; /* red */
+  }
+
+  .medium {
+    color: #f0ad4e; /* orange */
+  }
+
+  .low {
+    color: #5cb85c; /* green */
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 600px) {
     body {
-      font-family: Arial, sans-serif;
-      margin: 30px;
-      line-height: 1.6;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    input[type="text"], select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    label {
-      display: inline-block;
-      margin-right: 10px;
-      margin-top: 5px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .result {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #f4f4f4;
-      border-radius: 10px;
-    }
-    .category {
-      margin-top: 25px;
-    }
-    a {
-      color: #007BFF;
-      text-decoration: underline;
-    }
-    small {
-      display: block;
-      margin-top: 5px;
-      color: gray;
-    }
-    .address-banner {
-      background-color: #d1ecf1;
-      color: #0c5460;
+      font-size: 16px;
       padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      font-weight: bold;
     }
-    .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+
+    input[type="text"], select {
+      font-size: 16px;
     }
-    .checkbox-group label {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
+
+    label {
+      font-size: 16px;
     }
-    .severity {
-      margin-left: 5px;
-      font-size: 0.9em;
-      font-weight: bold;
+
+    button {
+      font-size: 16px;
+      padding: 12px;
     }
-    .high {
-      color: #d9534f; /* red */
+
+    .address-banner {
+      font-size: 16px;
+      padding: 18px;
     }
-    .medium {
-      color: #f0ad4e; /* orange */
+
+    a {
+      font-size: 16px;
     }
-    .low {
-      color: #5cb85c; /* green */
+
+    small {
+      font-size: 14px;
     }
-  </style>
+  }
+</style>
+
 </head>
 <body>
 
