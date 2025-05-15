@@ -1,42 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classification des risques immobiliers</title>
   <style>
+    html {
+      font-size: 100%;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 30px;
-      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.6;
+      font-size: 16.5px;
+      background-color: #f9f9f9;
     }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
     }
+
     th, td {
-      padding: 10px;
-      border: 1px solid #ccc;
+      padding: 14px;
+      border-bottom: 1px solid #ddd;
       text-align: left;
+      font-size: 16px;
     }
+
     th {
-      background-color: #f4f4f4;
+      background-color: #007BFF;
+      color: white;
     }
+
     .disclaimer {
       margin-top: 40px;
       font-size: 0.9em;
       color: gray;
+      background-color: #f2f2f2;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; padding: 15px; }
+      th, td { font-size: 15px; }
     }
   </style>
 </head>
+
 <body>
 
   <h1>Classification des risques immobiliers</h1>
 
-  <p>Voici la logique utilisée pour classer les catégories de risques proposés dans l'outil :</p>
+  <p>Voici la logique utilisée pour classer les catégories de risques dans notre outil :</p>
 
   <table>
     <thead>
@@ -55,27 +86,27 @@
       <tr>
         <td>Contamination du sol</td>
         <td>Élevé</td>
-        <td>Peut bloquer une vente, requérir des décontaminations coûteuses, et poser des risques environnementaux.</td>
+        <td>Peut empêcher une vente, nécessiter des décontaminations coûteuses et présenter des risques environnementaux.</td>
       </tr>
       <tr>
         <td>Présence de plomb dans l'eau</td>
         <td>Moyen</td>
-        <td>Risque pour la santé sur le long terme, mais généralement corrigeable par des travaux localisés.</td>
+        <td>Risque pour la santé à long terme, généralement corrigible par remplacement des conduites.</td>
       </tr>
       <tr>
         <td>Radon</td>
         <td>Moyen</td>
-        <td>Risque sanitaire (cancer du poumon) en cas d'exposition chronique, mais généralement corrigeable par des travaux localisés.</td>
+        <td>Risque sanitaire sérieux (cancer du poumon) en cas d'exposition prolongée, mais gérable par installation de systèmes de ventilation.</td>
       </tr>
       <tr>
         <td>Pipelines</td>
         <td>Faible</td>
-        <td>Présence parfois éloignée et peu d'impact immédiat sur la propriété résidentielle standard.</td>
+        <td>Présence souvent éloignée et peu d'impact immédiat sur les propriétés résidentielles typiques.</td>
       </tr>
       <tr>
         <td>Règlements d'urbanisme</td>
         <td>Faible</td>
-        <td>Risques d'usage ou de rénovation, mais généralement sans impact immédiat sur la structure ou la santé.</td>
+        <td>Risques d'usage ou de projets de rénovation, mais sans impact immédiat sur la santé ou la structure.</td>
       </tr>
     </tbody>
   </table>
@@ -83,13 +114,12 @@
   <div class="disclaimer">
     <p><strong>⚠️ Avertissement :</strong></p>
     <p>
-      Cet outil est fourni à titre informatif uniquement. Il ne remplace en aucun cas la responsabilité de l'agent immobilier 
-      de valider chaque risque applicable à une propriété, de conseiller adéquatement son client, et d'expliquer 
-      les solutions possibles pour atténuer ces risques.
+      Cet outil est fourni à titre informatif uniquement. Il ne remplace en aucun cas la responsabilité de l'agent immobilier
+      ou du professionnel d'évaluer rigoureusement les risques spécifiques d'une propriété, d'informer correctement son client,
+      et de proposer des mesures d'atténuation adaptées. Chaque transaction immobilière est unique et doit être évaluée individuellement.
     </p>
     <p>
-      Chaque transaction immobilière doit être analysée individuellement. L'utilisateur demeure responsable de toute information 
-      transmise au client final.
+      L'utilisateur demeure responsable de toute information transmise au client final.
     </p>
   </div>
 
