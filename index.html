@@ -74,21 +74,17 @@
       align-items: center;
       margin-bottom: 10px;
     }
-
     .severity {
       margin-left: 5px;
       font-size: 0.9em;
       font-weight: bold;
     }
-
     .high {
       color: #d9534f; /* red */
     }
-
     .medium {
       color: #f0ad4e; /* orange */
     }
-
     .low {
       color: #5cb85c; /* green */
     }
@@ -110,7 +106,13 @@
       <label><input type="checkbox" name="category" value="radon"> Radon <span class="severity medium">(Moyen)</span></label>
       <label><input type="checkbox" name="category" value="pipelines"> Pipelines <span class="severity low">(Faible)</span></label>
       <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme <span class="severity low">(Faible)</span></label>
-    </div></br></br>
+
+      <small style="margin-top: 20px;">
+        <a href="risques.html" target="_blank">🔎 Plus d'information sur la classification des risques</a>
+      </small>
+    </div>
+  
+    </br></br>
 
     <button type="submit">Vérifier la propriété</button>
   </form>
