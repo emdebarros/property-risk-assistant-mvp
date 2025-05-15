@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Property Verification Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    label {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 10px;
+    }
+    .category {
+      margin-top: 25px;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: underline;
+    }
+    small {
+      display: block;
+      margin-top: 5px;
+      color: gray;
+    }
+    .address-banner {
+      background-color: #d1ecf1;
+      color: #0c5460;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Property Verification Tool</h1>
+
+  <form id="verifyForm">
+    <label for="address">Enter Property Address:</label>
+    <input type="text" id="address" placeholder="Ex: 123 Rue Principale, Laval" required>
+
+    <p>Select what you want to verify:</p>
+    <label><input type="checkbox" name="category" value="flood"> Flood Risk</label>
+    <label><input type="checkbox" name="category" value="contamination"> Soil Contamination</label>
+    <label><input type="checkbox" name="category" value="pipelines"> Pipelines</label>
+    <label><input type="checkbox" name="category" value="urbanism"> Urbanism Rules</label>
+    <label><input type="checkbox" name="category" value="lead"> Lead Pipes</label>
+    <label><input type="checkbox" name="category" value="radon"> Radon Risk</label><br><br>
+
+    <button type="submit">Verify Property</button>
+  </form>
+
+  <div id="results" class="result"></div>
+
+  <script>
+    const form = document.getElementById('verifyForm');
+    const resultsDiv = document.getElementById('results');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const address = document.getElementById('address').value.trim();
+      const selectedCategories = [...document.querySelectorAll('input[name="category"]:checked')].map(e => e.value);
+
+      if (selectedCategories.length === 0) {
+        alert('Please select at least one category to verify.');
+        return;
+      }
+
+      let output = `
+        <div class="address-banner">
+          📍 Property Address to Verify: <br><br> ${address} <br><br>
+          <small>⚠️ When opening the tools below, copy and paste this address manually inside each tool’s search bar.</small>
+        </div>
+      `;
+
+      selectedCategories.forEach(category => {
+        if (category === 'flood') {
+          output += `
+            <div class="category">
+              <h3>🌊 Flood Risk</h3>
+              <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/carte-esri/index.html" target="_blank">Check Flood Zones (QC Map)</a></p>
+              <small>Paste your address in the map's search bar once loaded.</small>
+            </div>
+          `;
+        }
+        if (category === 'contamination') {
+          output += `
+            <div class="category">
+              <h3>🧪 Soil Contamination</h3>
+              <p><a href="https://www.pes1.enviroweb.gouv.qc.ca/AtlasPublic/CartesPubliques/cartesmddelcc.html?cfg=TerrainsContamines.json" target="_blank">Contaminated Lands Map (Quebec)</a></p>
+              <p><a href="https://map-carte.tbs-sct.gc.ca/map-carte/fcsi-rscf/map-carte.aspx?Language=FR&qid=544002" target="_blank">Federal Contamination Sites Map (Canada)</a></p>
+              <small>Locate your property manually by zooming in and searching your area.</small>
+            </div>
+          `;
+        }
+        if (category === 'pipelines') {
+          output += `
+            <div class="category">
+              <h3>🛢️ Pipelines</h3>
+              <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Check Pipelines Near Property</a></p>
+              <small>Zoom to your property area to verify presence of pipelines.</small>
+            </div>
+          `;
+        }
+        if (category === 'urbanism') {
+          output += `
+            <div class="category">
+              <h3>🏘️ Urbanism Rules</h3>
+              <p><a href="https://info-reglements.laval.ca/recherche" target="_blank">Urban Planning Rules Lookup (Laval Example)</a></p>
+              <small>Search by civic number and street name after opening the tool.</small>
+            </div>
+          `;
+        }
+        if (category === 'lead') {
+          output += `
+            <div class="category">
+              <h3>🚰 Lead Pipes Risk (Montreal)</h3>
+              <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Check for Lead Water Entries</a></p>
+              <small>Enter your address to check if lead pipes are present in the sector.</small>
+            </div>
+          `;
+        }
+        if (category === 'radon') {
+          output += `
+            <div class="category">
+              <h3>🏠 Radon Risk</h3>
+              <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">Understand Radon Risks</a></p>
+              <small>General risk based on postal code or geographic zone — no specific address lookup available yet.</small>
+            </div>
+          `;
+        }
+      });
+
+      resultsDiv.innerHTML = output;
+    });
+  </script>
+
+</body>
+</html>
