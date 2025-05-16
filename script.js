@@ -160,9 +160,9 @@ form.addEventListener('submit', function(event) {
 
           <br>
 
-          <p><strong>4. Carte Spectrum – Montréal (Plateau–Mont-Royal)</strong></p>
-          <p><a href="https://spectrum.montreal.ca/connect/analyst/mobile/#/main?mapcfg=-%20Le%20Plateau%E2%80%93Mont-Royal" target="_blank">Consultez la carte réglementaire du Plateau–Mont-Royal</a></p>
-          <small>Montre les règles de zonage, hauteurs permises, usages autorisés, etc. pour l’arrondissement du Plateau–Mont-Royal uniquement.</small>
+          <p><strong>4. Carte Spectrum – Montréal</strong></p>
+          <p><a href="https://spectrum.montreal.ca/connect/analyst/mobile/#/main?mapcfg=-%20Le%20Plateau%E2%80%93Mont-Royal" target="_blank">Consultez la carte réglementaire de Montréal</a></p>
+          <small>Montre les règles de zonage, hauteurs permises, usages autorisés, etc. pour la région de Montréal</small>
 
           <br>
 
