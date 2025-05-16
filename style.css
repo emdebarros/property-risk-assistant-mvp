@@ -270,6 +270,36 @@ th {
   font-weight: 500;
 }
 
+/* Wrapper responsive pour les tableaux */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table à l'intérieur du wrapper */
+.table-wrapper table {
+  width: 100%;
+  min-width: 600px; /* ou plus petit si nécessaire */
+  border-collapse: collapse;
+}
+
+/* Ajustements généraux pour les th/td */
+.table-wrapper th,
+.table-wrapper td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.table-wrapper th {
+  background-color: #0069D9;
+  color: white;
+  font-weight: 500;
+}
+
+
 /* DISCLAIMER */
 .disclaimer {
   margin-top: 40px;
