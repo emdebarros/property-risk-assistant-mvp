@@ -184,13 +184,15 @@ form.addEventListener('submit', function(event) {
 
           <br>
 
-          <p><strong>1. Carte interactive – Ville de Saint-Jérôme</strong></p>
+          <p><strong>2. Carte interactive – Ville de Saint-Jérôme</strong></p>
           <p><a href="https://www.vsj.ca/carte-interactive/" target="_blank">Accédez à la carte interactive de Saint-Jérôme</a></p>
           <small>Carte municipale contenant plusieurs couches d’informations incluant le zonage.</small>
 
           <br>
 
           <p>Autre (développement et densité)</p>
+
+          <br>
 
           <p><strong>1. Carte de densité résidentielle – SCHL (optionnel)</strong></p>
           <p><a href="https://cmhc.maps.arcgis.com/apps/instant/lookup/index.html?appid=00f41dd48926475587c1e3faeea84b74&locale=fr&langCode=fre" target="_blank">Consultez la carte de densité résidentielle (SCHL)</a></p>
