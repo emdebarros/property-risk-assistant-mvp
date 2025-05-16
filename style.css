@@ -91,12 +91,6 @@
     word-wrap: break-word;
   }
 
-  .checkbox-group label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-
   .severity-title {
     font-weight: bold;
     margin-top: 20px;
