@@ -195,12 +195,12 @@ form.addEventListener('submit', function(event) {
     <div class="address-banner">
       📍 Adresse de la propriété à vérifier
       <button id="copy-address-button" onclick="copyAddress()" style="background: none; border: none; font-weight: bold; font-size: 16px; cursor: pointer; color: #007BFF;">
-        📋 ${address}
+        ${address}
       </button>
       <div id="copy-confirmation" style="display: none; font-size: 0.9em; color: green; margin-top: 5px;">
         Adresse copiée!
       </div>
-      <small>⚠Lors de l'ouverture des outils ci-dessous, copiez et collez cette adresse manuellement dans la barre de recherche de chaque outil.</small>
+      <small>Cliquez/tapez sur l'adresse ci-dessus pour la copier et collez-là manuellement dans la barre de recherche de chaque outil co-dessous.</small>
     </div>
   `;
 
@@ -209,8 +209,22 @@ form.addEventListener('submit', function(event) {
       output += `
         <div class="category">
           <h3>🌊 Risque d'inondation</h3>
-          <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/carte-esri/index.html" target="_blank">Vérifiez les zones inondables (Carte du QC)</a></p>
-          <small>Collez votre adresse dans la barre de recherche de la carte une fois chargée.</small>
+
+          <p><strong>1. Carte Géo-inondations (Gouvernement du Québec)</strong></p>
+          <p><a href="https://geoinondations.gouv.qc.ca/" target="_blank">Consultez la carte Géo-inondations</a></p>
+          <small>Carte interactive officielle. Couvre tout le Québec. Recommandée pour les zones à l'extérieur du Grand Montréal.</small>
+
+          <br><br>
+
+          <p><strong>2. Carte des zones inondables – CMM (Grand Montréal)</strong></p>
+          <p><a href="https://evouala.cmm.qc.ca/application/run/1373/embedded" target="_blank">Consultez la carte de la CMM</a></p>
+          <small>Couvre les 82 municipalités de la Communauté métropolitaine de Montréal. Informative seulement, sans valeur légale.</small>
+
+          <br><br>
+
+          <p><strong>3. Carte ZIS – CEHQ (2019)</strong></p>
+          <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/ZIS-20191230/index.html" target="_blank">Consultez la carte ZIS (Zone d’intervention spéciale)</a></p>
+          <small>Carte statique mise en place après les inondations de 2019. Utilisée à titre de référence complémentaire.</small>
         </div>
       `;
     }
