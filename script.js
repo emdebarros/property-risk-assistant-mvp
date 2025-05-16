@@ -24,7 +24,7 @@ form.addEventListener('submit', function(event) {
       <div id="copy-confirmation" style="display: none; font-size: 0.9em; color: green; margin-top: 5px;">
         Adresse copiée!
       </div>
-      <small style="fontweight: normal;">Note : L’outil ne permet pas encore d’entrer automatiquement l’adresse dans les cartes. Cependant, vous pouvez cliquer/taper sur l’adresse ci-dessus pour la copier, puis la coller manuellement dans la barre de recherche de chaque outil ci-dessous.</small>
+      <small style="fontweight: normal;">Cliquer/taper sur l’adresse ci-dessus pour la copier, puis la coller manuellement dans la barre de recherche de chaque outil ci-dessous.</small>
     </div>
   `;
 
