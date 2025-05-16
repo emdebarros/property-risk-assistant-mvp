@@ -224,6 +224,7 @@ form.addEventListener('submit', function(event) {
     
   });
 
+  resultsDiv.style.display = 'block';
   resultsDiv.innerHTML = output;
 });
 
