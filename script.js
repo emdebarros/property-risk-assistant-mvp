@@ -64,15 +64,18 @@ form.addEventListener('submit', function(event) {
         <div class="category">
           <h3>🧪 Contamination du sol</h3>
 
-          <p><strong>1. Carte des terrains contaminés – Québec</strong></p>
+          <p><strong>1. Carte des terrains contaminés - Québec</strong></p>
           <p><a href="https://www.pes1.enviroweb.gouv.qc.ca/AtlasPublic/CartesPubliques/cartesmddelcc.html?cfg=TerrainsContamines.json" target="_blank">Consultez la carte provinciale des terrains contaminés</a></p>
           <small>Carte officielle du ministère de l’Environnement du Québec. Couvre les sites contaminés déclarés sur l’ensemble du territoire québécois.</small>
-
-          <br>
 
           <p><strong>2. Registre des sites contaminés – Gouvernement du Canada</strong></p>
           <p><a href="https://map-carte.tbs-sct.gc.ca/map-carte/fcsi-rscf/map-carte.aspx?Language=FR&qid=544002" target="_blank">Consultez la carte des sites contaminés fédéraux</a></p>
           <small>Montre les terrains contaminés sous juridiction fédérale : ports, chemins de fer, anciennes installations militaires, etc.</small>
+
+          <p><strong>3. Terrains contaminés - Ville de Laval</strong></p>
+          <p><a href="https://www.laval.ca/entreprises/ecoresponsabilite-collectes-commerciales/terrains-contamines/" target="_blank">Informations sur les terrains contaminés à Laval</a></p>
+          <small>Registre municipal des terrains contaminés ou potentiellement contaminés.</small>
+      
         </div>
       `;
     }
@@ -94,7 +97,7 @@ form.addEventListener('submit', function(event) {
 
           <br>
 
-          <p>Grand Montréal</p>
+          <p>Ville de Montréal</p>
 
           <br>
 
@@ -121,9 +124,9 @@ form.addEventListener('submit', function(event) {
         <div class="category">
           <h3>🏠 Risque de radon</h3>
 
-          <p><strong>1. Poumon Québec – Guide d'information sur le radon</strong></p>
+          <p><strong>1. Guide d'information sur le radon par région</strong></p>
           <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">En savoir plus sur le radon et les moyens de prévention</a></p>
-          <small>Ressource éducative pour comprendre les risques liés au radon, comment le mesurer chez soi, et comment le corriger si nécessaire. Il n'existe pas encore de carte interactive par adresse au Québec.</small>
+          <small>Ressource éducative pour comprendre les risques liés au radon, comment le mesurer chez soi, et comment le corriger si nécessaire. Il n'existe pas encore de carte interactive par adresse au Québec, mais vous pouvez consulter les données par région.</small>
         </div>
       `;
     }
@@ -132,9 +135,13 @@ form.addEventListener('submit', function(event) {
         <div class="category">
           <h3>🗑️ Site d’enfouissement</h3>
 
-          <p><strong>1. Répertoire des lieux d’élimination – MELCC</strong></p>
-          <p><a href="https://www.repertoiredeslieux.ca/" target="_blank">Consultez le répertoire des sites d’enfouissement</a></p>
-          <small>Carte interactive officielle des lieux d’enfouissement et de traitement des matières résiduelles au Québec. Peut aider à repérer la proximité de sites actifs ou fermés.</small>
+          <p><strong>1. Répertoire des lieux d’élimination - Ville de Montréal</strong></p>
+          <p><a href="https://environnementmtl.maps.arcgis.com/apps/webappviewer/index.html?id=eddfe22f7ef54982a6545e8eb3c86a9a" target="_blank">Consultez le répertoire des sites d’enfouissement</a></p>
+          <small>Carte interactive officielle des lieux d’enfouissement et de traitement des matières résiduelles pour la ville de Montréal. Peut aider à repérer la proximité de sites actifs ou fermés.</small>
+
+          <p><strong>2. Lieux d’élimination des résidus industriels (MELCC)</strong></p>
+          <p><a href="https://www.environnement.gouv.qc.ca/sol/residus_ind/resultats.asp" target="_blank">Rechercher les sites enregistrés par adresse</a></p>
+          <small>Permet une recherche textuelle par région ou municipalité. Affiche une liste des lieux d’élimination avec leur statut, leur type, et l’exploitant.</small>
         </div>
       `;
     }
