@@ -183,9 +183,60 @@ small {
   display: none;
 }
 
+/* Conteneur de chaque section de résultat */
 .category {
+  background-color: #ffffff;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  padding: 24px;
   margin-top: 30px;
+  margin-bottom: 32px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
+
+/* Titre de chaque section (ex: Risque d'inondation) */
+.category h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1C3F5D;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Titres des sous-sections (ex: Carte Géo-inondations) */
+.category p strong {
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+/* Lien vers les cartes */
+.category a {
+  color: #0069D9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.category a:hover {
+  text-decoration: underline;
+  color: #004a99;
+}
+
+/* Petits textes explicatifs */
+.category small {
+  display: block;
+  margin-bottom: 20px;
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Espacement vertical entre les paragraphes */
+.category p {
+  margin: 12px 0 6px;
+}
+
 
 /* MESSAGES D'ERREUR */
 #error-message {
