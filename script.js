@@ -142,31 +142,57 @@ form.addEventListener('submit', function(event) {
         <div class="category">
           <h3>🏘️ Règlements d'urbanisme</h3>
 
+          <p>Grand Montréal</p>
+
+          <br>
+
           <p><strong>1. Carte SIGMA – Communauté métropolitaine de Montréal (CMM)</strong></p>
           <p><a href="https://sigma.cmm.qc.ca/application/run/448/embedded" target="_blank">Consultez la carte SIGMA</a></p>
           <small>Couvre les 82 municipalités de la CMM. Permet de visualiser les zones d’usage, retraits, densités, hauteurs, usages permis et autres règles municipales.</small>
 
           <br>
 
-          <p><strong>2. Carte interactive de zonage – Ville de Laval</strong></p>
-          <p><a href="https://vl.maps.arcgis.com/apps/webappviewer/index.html?id=417e0ce0a0f74749815a4c30328c368c" target="_blank">Accédez à la carte interactive de zonage de Laval</a></p>
-          <small>Permet de visualiser le zonage de chaque lot sur le territoire lavallois. Outil visuel complémentaire à la recherche textuelle.</small>
-
-          <br>
-
-          <p><strong>3. Recherche des règlements – Ville de Laval</strong></p>
-          <p><a href="https://info-reglements.laval.ca/recherche/" target="_blank">Utilisez l’outil de recherche réglementaire de Laval</a></p>
-          <small>Recherche par adresse pour obtenir les règlements et documents officiels applicables à une propriété à Laval.</small>
-
-          <br>
-
-          <p><strong>4. Carte Spectrum – Montréal</strong></p>
+          <p><strong>2. Carte Spectrum – Montréal</strong></p>
           <p><a href="https://spectrum.montreal.ca/connect/analyst/mobile/#/main?mapcfg=-%20Le%20Plateau%E2%80%93Mont-Royal" target="_blank">Consultez la carte réglementaire de Montréal</a></p>
           <small>Montre les règles de zonage, hauteurs permises, usages autorisés, etc. pour la région de Montréal</small>
 
           <br>
 
-          <p><strong>5. Carte de densité résidentielle – SCHL (optionnel)</strong></p>
+          <p>Ville de Laval</p>
+
+          <br>
+
+          <p><strong>1. Carte interactive de zonage – Ville de Laval</strong></p>
+          <p><a href="https://vl.maps.arcgis.com/apps/webappviewer/index.html?id=417e0ce0a0f74749815a4c30328c368c" target="_blank">Accédez à la carte interactive de zonage de Laval</a></p>
+          <small>Permet de visualiser le zonage de chaque lot sur le territoire lavallois. Outil visuel complémentaire à la recherche textuelle.</small>
+
+          <br>
+
+          <p><strong>2. Recherche des règlements – Ville de Laval</strong></p>
+          <p><a href="https://info-reglements.laval.ca/recherche/" target="_blank">Utilisez l’outil de recherche réglementaire de Laval</a></p>
+          <small>Recherche par adresse pour obtenir les règlements et documents officiels applicables à une propriété à Laval.</small>
+
+          <br>
+
+          <p>Couronne Nord</p>
+
+          <br>
+
+          <p><strong>1. Carte interactive – Ville de Saint-Eustache</strong></p>
+          <p><a href="https://experience.arcgis.com/experience/ad8d0bdb868b45398044c3e639d07dba/page/Page-initiale" target="_blank">Consultez la carte réglementaire de Saint-Eustache</a></p>
+          <small>Permet de visualiser les zones d’usage, les bâtiments et autres éléments réglementaires de la municipalité.</small>
+
+          <br>
+
+          <p><strong>1. Carte interactive – Ville de Saint-Jérôme</strong></p>
+          <p><a href="https://www.vsj.ca/carte-interactive/" target="_blank">Accédez à la carte interactive de Saint-Jérôme</a></p>
+          <small>Carte municipale contenant plusieurs couches d’informations incluant le zonage.</small>
+
+          <br>
+
+          <p>Autre (développement et densité)</p>
+
+          <p><strong>1. Carte de densité résidentielle – SCHL (optionnel)</strong></p>
           <p><a href="https://cmhc.maps.arcgis.com/apps/instant/lookup/index.html?appid=00f41dd48926475587c1e3faeea84b74&locale=fr&langCode=fre" target="_blank">Consultez la carte de densité résidentielle (SCHL)</a></p>
           <small>Montre les zones à fort potentiel de densification résidentielle au Canada. Utile pour projets de développement ou d’investissement.</small>
         </div>
