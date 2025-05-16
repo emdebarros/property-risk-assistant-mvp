@@ -92,15 +92,27 @@ form.addEventListener('submit', function(event) {
         <div class="category">
           <h3>🚰 Présence de plomb dans l'eau</h3>
 
+          <br>
+
+          <p>Grand Montréal</p>
+
+          <br>
+
           <p><strong>1. Vérification des entrées d'eau – Ville de Montréal</strong></p>
-          <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Consultez l'outil d’adresse de la Ville de Montréal</a></p>
+          <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Consultez l'outil de la Ville de Montréal</a></p>
           <small>Permet de vérifier, par adresse, la présence potentielle de tuyaux en plomb pour les propriétés situées sur l'île de Montréal.</small>
 
           <br>
 
-          <p><strong>2. Présence de plomb dans les écoles – Ministère de l'Éducation</strong></p>
-          <p><a href="https://experience.arcgis.com/experience/e65739b2c27d4d9391774b83fa2d0bcd" target="_blank">Consultez la carte des écoles testées pour le plomb</a></p>
-          <small>Carte interactive montrant les résultats de tests de plomb dans l’eau potable des établissements scolaires à travers le Québec.</small>
+          <br>
+
+          <p>Ville de Gatineau</p>
+
+          <br>
+
+          <p><strong>1. Vérification des entrées d'eau – Ville de Montréal</strong></p>
+          <p><a href="https://experience.arcgis.com/experience/e65739b2c27d4d9391774b83fa2d0bcd" target="_blank">Consultez l'outil de la Ville de Gatineau</a></p>
+          <small>Permet de vérifier, par adresse, la présence potentielle de tuyaux en plomb pour les propriétés situées dans la ville de Gatineau.</small>
         </div>
       `;
     }
