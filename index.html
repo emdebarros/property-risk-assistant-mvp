@@ -8,65 +8,66 @@
 </head>
 
 <body>
+  <div class="container">
 
-<h1>Outil de vérification de propriétés 🏡</h1>
+  <h1>Outil de vérification de propriétés 🏡</h1>
 <p style="text-align: center; color: #899499;">L'objectif de cet outil est de faciliter la diligence raisonnable pour les agents et acheteurs en centralisant les outils de vérification des risques pour une propriété sur un territoire donné.</p>
 
-<form id="verifyForm">
-  <label for="address">Entrez l'adresse de la propriété :</label>
-  <input type="text" id="address" placeholder="Ex : 123 Rue Principale, Laval" required>
+  <form id="verifyForm">
+    <label for="address">Entrez l'adresse de la propriété :</label>
+    <input type="text" id="address" placeholder="Ex : 123 Rue Principale, Laval" required>
 
-  <p>Sélectionnez les catégories de risques que vous souhaitez vérifier :</p>
+    <p>Sélectionnez les catégories de risques que vous souhaitez vérifier :</p>
 
-  <fieldset id="checkboxes-group" style="border: none; padding: 0;">
-    <div class="checkbox-group">
+    <fieldset id="checkboxes-group" style="border: none; padding: 0;">
+      <div class="checkbox-group">
 
-      <p class="severity-title high" style="margin-top: 0px;">Risques Élevés</p>
-      <label><input type="checkbox" name="category" value="flood"> Inondation</label>
-      <label><input type="checkbox" name="category" value="contamination"> Contamination du sol</label>
-      <label><input type="checkbox" name="category" value="landslide"> Glissement de terrain</label>
+        <p class="severity-title high" style="margin-top: 0px;">Risques Élevés</p>
+        <label><input type="checkbox" name="category" value="flood"> Inondation</label>
+        <label><input type="checkbox" name="category" value="contamination"> Contamination du sol</label>
+        <label><input type="checkbox" name="category" value="landslide"> Glissement de terrain</label>
 
-      <p class="severity-title medium">Risques Moyens</p>
-      <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau</label>
-      <label><input type="checkbox" name="category" value="radon"> Radon</label>
-      <label><input type="checkbox" name="category" value="landfill"> Site d’enfouissement</label>
+        <p class="severity-title medium">Risques Moyens</p>
+        <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau</label>
+        <label><input type="checkbox" name="category" value="radon"> Radon</label>
+        <label><input type="checkbox" name="category" value="landfill"> Site d’enfouissement</label>
 
-      <p class="severity-title low">Risques Faibles</p>
-      <label><input type="checkbox" name="category" value="pipelines"> Pipelines</label>
-      <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme</label>
-    </div>
+        <p class="severity-title low">Risques Faibles</p>
+        <label><input type="checkbox" name="category" value="pipelines"> Pipelines</label>
+        <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme</label>
+      </div>
 
-    <div id="error-message">
-      Veuillez sélectionner au moins une catégorie à vérifier.
-    </div>
+      <div id="error-message">
+        Veuillez sélectionner au moins une catégorie à vérifier.
+      </div>
 
-    <small style="display: block; text-align: right; margin-top: 30px;">
-      <a href="risques.html" target="_blank" style="font-size: 14px;">🔎 Plus d'information sur la classification des risques</a>
-    </small>
-  </fieldset>
+      <small style="display: block; text-align: right; margin-top: 30px;">
+        <a href="risques.html" target="_blank" style="font-size: 14px;">🔎 Plus d'information sur la classification des risques</a>
+      </small>
+    </fieldset>
 
-  <br>
+    <br>
 
-  <button type="submit">Vérifier la propriété</button>
-</form>
+    <button type="submit">Vérifier la propriété</button>
+  </form>
 
-<div id="results" class="result"></div>
+  <div id="results" class="result"></div>
 
-<div class="disclaimer">
-  <p><strong>⚠️ Limitations et avis de non-responsabilité</strong></p>
-  <p>
-    1) L’outil ne permet pas encore de vérifier automatiquement les risques à partir de l’adresse saisie. Il ne remplit pas non plus automatiquement les champs de recherche des cartes proposées. L’utilisateur doit copier et coller manuellement l’adresse dans chaque outil de vérification.
-  </p>
-    2) Toutes les municipalités du Québec ne sont pas couvertes par toutes les cartes interactives proposées. La disponibilité des données dépend de la participation des MRC et municipalités à la publication d’informations accessibles au public. Pour l’instant, l’outil est principalement pertinent pour les régions du Grand Montréal.
-  <p>
-    3) Cet outil est fourni à titre informatif uniquement. Il ne remplace en aucun cas la responsabilité de l’agent immobilier ou du professionnel de vérifier rigoureusement l’ensemble des éléments pertinents à la propriété visée. Il est de la responsabilité de l’agent d’effectuer toutes les démarches nécessaires afin d’informer adéquatement son client sur les risques potentiels liés à la propriété, incluant les moyens d’atténuation possibles, afin que ce dernier puisse prendre une décision éclairée.
-  </p>
-  <p>
-    4) L'utilisateur demeure responsable de toute information transmise au client final.
-  </p>
-</div>
+  <div class="disclaimer">
+    <p><strong>⚠️ Limitations et avis de non-responsabilité</strong></p>
+    <p>
+      1) L’outil ne permet pas encore de vérifier automatiquement les risques à partir de l’adresse saisie. Il ne remplit pas non plus automatiquement les champs de recherche des cartes proposées. L’utilisateur doit copier et coller manuellement l’adresse dans chaque outil de vérification.
+    </p>
+      2) Toutes les municipalités du Québec ne sont pas couvertes par toutes les cartes interactives proposées. La disponibilité des données dépend de la participation des MRC et municipalités à la publication d’informations accessibles au public. Pour l’instant, l’outil est principalement pertinent pour les régions du Grand Montréal.
+    <p>
+      3) Cet outil est fourni à titre informatif uniquement. Il ne remplace en aucun cas la responsabilité de l’agent immobilier ou du professionnel de vérifier rigoureusement l’ensemble des éléments pertinents à la propriété visée. Il est de la responsabilité de l’agent d’effectuer toutes les démarches nécessaires afin d’informer adéquatement son client sur les risques potentiels liés à la propriété, incluant les moyens d’atténuation possibles, afin que ce dernier puisse prendre une décision éclairée.
+    </p>
+    <p>
+      4) L'utilisateur demeure responsable de toute information transmise au client final.
+    </p>
+  </div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
+  </div>
 </body>
 </html>
