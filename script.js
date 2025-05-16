@@ -27,7 +27,7 @@ form.addEventListener('submit', function(event) {
       <small style="font-weight: normal;">Cliquer/taper sur l’adresse ci-dessus pour la copier puis la coller manuellement dans la barre de recherche de chaque outil ci-dessous.</small>
     </div>
   `;
-
+  
   selectedCategories.forEach(category => {
     if (category === 'flood') {
       output += `
