@@ -108,15 +108,24 @@
     margin-bottom: 8px;
   }
 
-  .severity {
-    margin-left: 8px;
-    font-size: 0.9em;
+  .severity-title {
     font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16.5px;
   }
 
-  .high { color: #d9534f; }
-  .medium { color: #f0ad4e; }
-  .low { color: #5cb85c; }
+  .severity-title.high {
+    color: #d9534f;
+  }
+
+  .severity-title.medium {
+    color: #f0ad4e;
+  }
+
+  .severity-title.low {
+    color: #5cb85c;
+  }
 
   #error-message {
     color: red;
@@ -135,6 +144,7 @@
     small { font-size: 14px; }
   }
 </style>
+
 </head>
 
 <body>
@@ -149,16 +159,24 @@
 
   <fieldset id="checkboxes-group" style="border: none; padding: 0; margin-top: 10px;">
     <div class="checkbox-group">
-      <label><input type="checkbox" name="category" value="flood"> Inondation <span class="severity high">(Élevé)</span></label>
-      <label><input type="checkbox" name="category" value="contamination"> Contamination du sol <span class="severity high">(Élevé)</span></label>
-      <label><input type="checkbox" name="category" value="landslide"> Glissement de terrain <span class="severity high">(Élevé)</span></label>
 
-      <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau <span class="severity medium">(Moyen)</span></label>
-      <label><input type="checkbox" name="category" value="radon"> Radon <span class="severity medium">(Moyen)</span></label>
-      <label><input type="checkbox" name="category" value="landfill"> Site d’enfouissement <span class="severity medium">(Moyen)</span></label>
+      <p class="severity-title high">Risques Élevés</p>
+      <label><input type="checkbox" name="category" value="flood"> Inondation</label>
+      <label><input type="checkbox" name="category" value="contamination"> Contamination du sol</label>
+      <label><input type="checkbox" name="category" value="landslide"> Glissement de terrain</label>
 
-      <label><input type="checkbox" name="category" value="pipelines"> Pipelines <span class="severity low">(Faible)</span></label>
-      <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme <span class="severity low">(Faible)</span></label>
+      <br>
+
+      <p class="severity-title medium">Risques Moyens</p>
+      <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau</label>
+      <label><input type="checkbox" name="category" value="radon"> Radon</label>
+      <label><input type="checkbox" name="category" value="landfill"> Site d’enfouissement</label>
+
+      <br>
+
+      <p class="severity-title low">Risques Faibles</p>
+      <label><input type="checkbox" name="category" value="pipelines"> Pipelines</label>
+      <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme</label>
     </div>
 
     <div id="error-message">
