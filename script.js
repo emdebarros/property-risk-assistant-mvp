@@ -82,7 +82,7 @@ form.addEventListener('submit', function(event) {
           <h3>🪨 Glissement de terrain</h3>
 
           <p><strong>1. Atlas des zones de contraintes – Gouvernement du Québec</strong></p>
-          <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/contraintes/index.html" target="_blank">Consultez l’atlas des zones à risque de mouvements de terrain</a></p>
+          <p><a href="https://geoegl.msp.gouv.qc.ca/igo2/apercu-qc/?context=mtq&visiblelayers=zpegt_cgt_s,zpegt_cgt_l%20%3Chttps:%2F%2Fgeoegl.msp.gouv.qc.ca%2Figo2%2Fapercu-qc%2F" target="_blank">Consultez l’atlas des zones à risque de mouvements de terrain</a></p>
           <small>Carte interactive du ministère de l’Environnement. Permet d’identifier les zones sujettes aux glissements de terrain. Couvre plusieurs régions du Québec.</small>
         </div>
       `;
