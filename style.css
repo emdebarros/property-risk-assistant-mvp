@@ -124,3 +124,38 @@
     margin-top: 10px;
     display: none;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th, td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  th {
+    background-color: #007BFF;
+    color: white;
+  }
+
+  .disclaimer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: gray;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 600px) {
+    th, td { font-size: 15px; }
+  }
