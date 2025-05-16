@@ -97,9 +97,9 @@
   }
 
   .checkbox-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
   }
 
   .checkbox-group label {
@@ -133,8 +133,10 @@
     margin-top: 10px;
     display: none;
   }
-
-  @media (max-width: 600px) {
+  @media (min-width: 700px) {
+    .checkbox-group {
+      grid-template-columns: 1fr 1fr;
+    }
     body { font-size: 16px; padding: 15px; }
     input[type="text"], select { font-size: 16px; }
     label { font-size: 16px; }
@@ -165,14 +167,10 @@
       <label><input type="checkbox" name="category" value="contamination"> Contamination du sol</label>
       <label><input type="checkbox" name="category" value="landslide"> Glissement de terrain</label>
 
-      <br>
-
       <p class="severity-title medium">Risques Moyens</p>
       <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau</label>
       <label><input type="checkbox" name="category" value="radon"> Radon</label>
       <label><input type="checkbox" name="category" value="landfill"> Site d’enfouissement</label>
-
-      <br>
 
       <p class="severity-title low">Risques Faibles</p>
       <label><input type="checkbox" name="category" value="pipelines"> Pipelines</label>
