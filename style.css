@@ -64,6 +64,9 @@
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    max-height: 600px;        /* adjust as needed */
+    overflow-y: auto;         /* enables vertical scrolling */
+    scroll-behavior: smooth;  /* optional: smooth scrolling */
   }
 
   .category {
