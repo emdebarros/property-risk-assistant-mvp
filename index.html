@@ -151,8 +151,12 @@
     <div class="checkbox-group">
       <label><input type="checkbox" name="category" value="flood"> Inondation <span class="severity high">(Élevé)</span></label>
       <label><input type="checkbox" name="category" value="contamination"> Contamination du sol <span class="severity high">(Élevé)</span></label>
+      <label><input type="checkbox" name="category" value="landslide"> Glissement de terrain <span class="severity high">(Élevé)</span></label>
+
       <label><input type="checkbox" name="category" value="lead"> Présence de plomb dans l'eau <span class="severity medium">(Moyen)</span></label>
       <label><input type="checkbox" name="category" value="radon"> Radon <span class="severity medium">(Moyen)</span></label>
+      <label><input type="checkbox" name="category" value="landfill"> Site d’enfouissement <span class="severity medium">(Moyen)</span></label>
+
       <label><input type="checkbox" name="category" value="pipelines"> Pipelines <span class="severity low">(Faible)</span></label>
       <label><input type="checkbox" name="category" value="urbanism"> Règlements d'urbanisme <span class="severity low">(Faible)</span></label>
     </div>
@@ -252,6 +256,17 @@ form.addEventListener('submit', function(event) {
         </div>
       `;
     }
+    if (category === 'landslide') {
+      output += `
+        <div class="category">
+          <h3>🪨 Glissement de terrain</h3>
+
+          <p><strong>1. Atlas des zones de contraintes – Gouvernement du Québec</strong></p>
+          <p><a href="https://www.cehq.gouv.qc.ca/zones-inond/contraintes/index.html" target="_blank">Consultez l’atlas des zones à risque de mouvements de terrain</a></p>
+          <small>Carte interactive du ministère de l’Environnement. Permet d’identifier les zones sujettes aux glissements de terrain. Couvre plusieurs régions du Québec.</small>
+        </div>
+      `;
+    }
     if (category === 'lead') {
       output += `
         <div class="category">
@@ -277,6 +292,17 @@ form.addEventListener('submit', function(event) {
           <p><strong>1. Poumon Québec – Guide d'information sur le radon</strong></p>
           <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">En savoir plus sur le radon et les moyens de prévention</a></p>
           <small>Ressource éducative pour comprendre les risques liés au radon, comment le mesurer chez soi, et comment le corriger si nécessaire. Il n'existe pas encore de carte interactive par adresse au Québec.</small>
+        </div>
+      `;
+    }
+    if (category === 'landfill') {
+      output += `
+        <div class="category">
+          <h3>🗑️ Site d’enfouissement</h3>
+
+          <p><strong>1. Répertoire des lieux d’élimination – MELCC</strong></p>
+          <p><a href="https://www.repertoiredeslieux.ca/" target="_blank">Consultez le répertoire des sites d’enfouissement</a></p>
+          <small>Carte interactive officielle des lieux d’enfouissement et de traitement des matières résiduelles au Québec. Peut aider à repérer la proximité de sites actifs ou fermés.</small>
         </div>
       `;
     }
