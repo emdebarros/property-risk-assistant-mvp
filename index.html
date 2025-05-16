@@ -246,13 +246,14 @@ form.addEventListener('submit', function(event) {
         </div>
       `;
     }
-
     if (category === 'pipelines') {
       output += `
         <div class="category">
           <h3>🛢️ Pipelines</h3>
-          <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Vérifiez la présence de pipelines près de la propriété</a></p>
-          <small>Zoomez sur la zone de votre propriété pour vérifier la présence de pipelines.</small>
+
+          <p><strong>1. Carte des pipelines – Régie de l’énergie du Canada</strong></p>
+          <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Consultez la carte interactive des pipelines</a></p>
+          <small>Carte interactive officielle couvrant les pipelines sous juridiction fédérale (ex. TransCanada, Enbridge). Utile pour les propriétés situées à proximité d’infrastructures énergétiques majeures.</small>
         </div>
       `;
     }
