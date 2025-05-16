@@ -252,17 +252,6 @@ form.addEventListener('submit', function(event) {
         </div>
       `;
     }
-    if (category === 'pipelines') {
-      output += `
-        <div class="category">
-          <h3>🛢️ Pipelines</h3>
-
-          <p><strong>1. Carte des pipelines – Régie de l’énergie du Canada</strong></p>
-          <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Consultez la carte interactive des pipelines</a></p>
-          <small>Carte interactive officielle couvrant les pipelines sous juridiction fédérale (ex. TransCanada, Enbridge). Utile pour les propriétés situées à proximité d’infrastructures énergétiques majeures.</small>
-        </div>
-      `;
-    }
     if (category === 'lead') {
       output += `
         <div class="category">
@@ -284,8 +273,21 @@ form.addEventListener('submit', function(event) {
       output += `
         <div class="category">
           <h3>🏠 Risque de radon</h3>
-          <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">Comprendre les risques liés au radon</a></p>
-          <small>Risque général basé sur le code postal ou la zone géographique — pas de recherche par adresse spécifique disponible pour l'instant.</small>
+
+          <p><strong>1. Poumon Québec – Guide d'information sur le radon</strong></p>
+          <p><a href="https://poumonquebec.ca/sante-pulmonaire/environnement/radon/" target="_blank">En savoir plus sur le radon et les moyens de prévention</a></p>
+          <small>Ressource éducative pour comprendre les risques liés au radon, comment le mesurer chez soi, et comment le corriger si nécessaire. Il n'existe pas encore de carte interactive par adresse au Québec.</small>
+        </div>
+      `;
+    }
+    if (category === 'pipelines') {
+      output += `
+        <div class="category">
+          <h3>🛢️ Pipelines</h3>
+
+          <p><strong>1. Carte des pipelines – Régie de l’énergie du Canada</strong></p>
+          <p><a href="https://neb-gis.maps.arcgis.com/apps/webappviewer/index.html?id=adbba27734c04a0ebcd66bc62aaa5957&locale=fr" target="_blank">Consultez la carte interactive des pipelines</a></p>
+          <small>Carte interactive officielle couvrant les pipelines sous juridiction fédérale (ex. TransCanada, Enbridge). Utile pour les propriétés situées à proximité d’infrastructures énergétiques majeures.</small>
         </div>
       `;
     }
