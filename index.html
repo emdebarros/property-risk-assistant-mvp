@@ -257,21 +257,30 @@ form.addEventListener('submit', function(event) {
         </div>
       `;
     }
+    if (category === 'lead') {
+      output += `
+        <div class="category">
+          <h3>🚰 Présence de plomb dans l'eau</h3>
+
+          <p><strong>1. Vérification des entrées d'eau – Ville de Montréal</strong></p>
+          <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Consultez l'outil d’adresse de la Ville de Montréal</a></p>
+          <small>Permet de vérifier, par adresse, la présence potentielle de tuyaux en plomb pour les propriétés situées sur l'île de Montréal.</small>
+
+          <br>
+
+          <p><strong>2. Présence de plomb dans les écoles – Ministère de l'Éducation</strong></p>
+          <p><a href="https://experience.arcgis.com/experience/e65739b2c27d4d9391774b83fa2d0bcd" target="_blank">Consultez la carte des écoles testées pour le plomb</a></p>
+          <small>Carte interactive montrant les résultats de tests de plomb dans l’eau potable des établissements scolaires à travers le Québec.</small>
+        </div>
+      `;
+    }
+
     if (category === 'urbanism') {
       output += `
         <div class="category">
           <h3>🏘️ Règlements d'urbanisme</h3>
           <p><a href="https://info-reglements.laval.ca/recherche" target="_blank">Recherche des règlements d'urbanisme</a></p>
           <small>Recherchez par numéro civique et nom de rue après avoir ouvert l'outil.</small>
-        </div>
-      `;
-    }
-    if (category === 'lead') {
-      output += `
-        <div class="category">
-          <h3>🚰 Présence de plomb dans l'eau (Montréal)</h3>
-          <p><a href="https://services.montreal.ca/presence-plomb/" target="_blank">Vérifiez la présence d'entrées d'eau en plomb</a></p>
-          <small>Entrez votre adresse pour vérifier la présence éventuelle de tuyaux en plomb dans votre secteur.</small>
         </div>
       `;
     }
