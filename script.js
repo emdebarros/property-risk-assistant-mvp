@@ -142,6 +142,8 @@ form.addEventListener('submit', function(event) {
         <div class="category">
           <h3>🏘️ Règlements d'urbanisme</h3>
 
+          <br>
+
           <p>Grand Montréal</p>
 
           <br>
