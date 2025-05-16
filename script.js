@@ -16,17 +16,19 @@ form.addEventListener('submit', function(event) {
   }
 
   let output = `
-    <div class="address-banner">
-      📍 Adresse de la propriété à vérifier
-      <button id="copy-address-button" onclick="copyAddress()" style="background: none; border: none; font-weight: bold; font-size: 16px; cursor: pointer; color: #007BFF;">
-        ${address}
-      </button>
-      <div id="copy-confirmation" style="display: none; font-size: 0.9em; color: green; margin-top: 5px;">
-        Adresse copiée!
+    <div class="address-banner-ui">
+      <p class="label">📍 Adresse à vérifier</p>
+      <div class="address-box">
+        <span class="address-text">${address}</span>
+        <button id="copy-address-button" onclick="copyAddress()" class="copy-btn" title="Copier l'adresse">
+          📋 Copier
+        </button>
       </div>
-      <small style="font-weight: normal;">Cliquer/taper sur l’adresse ci-dessus pour la copier puis la coller manuellement dans la barre de recherche de chaque outil ci-dessous.</small>
+      <div id="copy-confirmation" class="copy-confirmation">Adresse copiée !</div>
+      <p class="note">Collez cette adresse manuellement dans chaque outil ci-dessous.</p>
     </div>
   `;
+
 
   selectedCategories.forEach(category => {
     if (category === 'flood') {
