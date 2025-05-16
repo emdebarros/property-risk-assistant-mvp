@@ -174,69 +174,6 @@ small {
   word-wrap: break-word;
 }
 
-.address-banner-ui {
-  background-color: #EAF5FF;
-  border: 1px solid #B8DFFF;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-
-.address-banner-ui .label {
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: #004085;
-}
-
-.address-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  border: 1px solid #D0D7DE;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 16px;
-  color: #333;
-  word-break: break-word;
-}
-
-.address-box .address-text {
-  flex: 1;
-}
-
-.copy-btn {
-  background-color: transparent;
-  color: #0069D9;
-  font-weight: 500;
-  font-size: 14px;
-  padding: 6px 10px;
-  border: none;
-  border-left: 1px solid #D0D7DE;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.copy-btn:hover {
-  color: #004a99;
-}
-
-.copy-confirmation {
-  margin-top: 8px;
-  font-size: 14px;
-  color: green;
-  display: none;
-}
-
-.address-banner-ui .note {
-  font-size: 13px;
-  margin-top: 12px;
-  color: #6c757d;
-}
-
-
 /* RÉSULTATS */
 .result {
   margin-top: 30px;
