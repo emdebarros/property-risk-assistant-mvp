@@ -185,6 +185,23 @@ button:hover {
   background-color: #0051aa;
 }
 
+.text-button {
+  background: none;
+  border: none;
+  color: #0069D9;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 6px;
+  transition: color 0.2s ease;
+}
+
+.text-button:hover {
+  color: #004a99;
+  text-decoration: none;
+}
+
+
 /* LIENS */
 a {
   color: #0069D9;

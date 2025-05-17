@@ -1,7 +1,7 @@
 const form = document.getElementById('verifyForm');
 const resultsDiv = document.getElementById('results');
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
   event.preventDefault();
 
   const address = document.getElementById('address').value.trim();
@@ -26,7 +26,7 @@ form.addEventListener('submit', function(event) {
       <small style="font-weight: normal;">Cliquez/tapez sur l’adresse ci-dessus pour la copier puis la coller manuellement dans la barre de recherche de chaque outil ci-dessous.</small>
     </div>
   `;
-  
+
   selectedCategories.forEach(category => {
     if (category === 'flood') {
       output += `
@@ -219,16 +219,24 @@ form.addEventListener('submit', function(event) {
           <small>Montre les zones à fort potentiel de densification résidentielle au Canada. Utile pour projets de développement ou d’investissement.</small>
         </div>
       `;
-    }  
-    
+    }
+
   });
 
   resultsDiv.style.display = 'block';
   resultsDiv.innerHTML = output;
 
   setTimeout(() => {
-  resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}, 100); // petit délai pour laisser le DOM se mettre à jour
+    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100); // petit délai pour laisser le DOM se mettre à jour
+});
+
+// ✅ Réinitialiser les catégories cochées
+document.getElementById('clearCategoriesBtn').addEventListener('click', () => {
+  const checkboxes = document.querySelectorAll('#checkboxes-group input[type="checkbox"]');
+  checkboxes.forEach(cb => cb.checked = false);
+  const errorMessage = document.getElementById('error-message');
+  errorMessage.style.display = 'none';
 });
 
 function copyAddress() {
