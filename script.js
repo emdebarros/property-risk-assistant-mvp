@@ -17,14 +17,13 @@ form.addEventListener('submit', function(event) {
 
   let output = `
     <div class="address-banner">
-      📍 Adresse de la propriété à vérifier
       <button id="copy-address-button" onclick="copyAddress()" style="background: none; border: none; font-weight: bold; font-size: 16px; cursor: pointer; color: #007BFF;">
-        ${address}
+        📍 ${address}
       </button>
       <div id="copy-confirmation" style="display: none; font-size: 0.9em; color: green; margin-top: 5px;">
         Adresse copiée!
       </div>
-      <small style="font-weight: normal;">Cliquer/taper sur l’adresse ci-dessus pour la copier puis la coller manuellement dans la barre de recherche de chaque outil ci-dessous.</small>
+      <small style="font-weight: normal;">Cliquez/tapez sur l’adresse ci-dessus pour la copier puis la coller manuellement dans la barre de recherche de chaque outil ci-dessous.</small>
     </div>
   `;
   
