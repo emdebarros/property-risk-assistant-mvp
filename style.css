@@ -53,11 +53,11 @@ label {
 }
 
 .severity-title.environmental {
-  color: #2ecc71; /* vert doux et accessible */
+  color: #5cb85c; /* vert doux et accessible */
 }
 
 .severity-title.chemical {
-  color: #f39c12; /* orange vif et clair */
+  color: #f0ad4e; /* orange vif et clair */
 }
 
 .severity-title.infrastructure {
@@ -126,8 +126,8 @@ input[type="text"]:focus {
 
 /* === HOVER PAR GRAVITÉ === */
 label[data-severity="environmental"]:hover {
-  background-color: #b8eec8;
-  border-color: #95d8aa;
+  background-color: #d4f4c7;
+  border-color: #98d98b;
 }
 
 label[data-severity="chemical"]:hover {
@@ -142,14 +142,14 @@ label[data-severity="infrastructure"]:hover {
 
 /* === COULEURS COHÉRENTES AVEC LE TITRE DE CATÉGORIE === */
 .risk-option input[type="checkbox"]:checked + label[data-severity="environmental"] {
-  background-color: #2ecc71;
+  background-color: #2ecc71; /* Vert vif */
   color: #fff;
   font-weight: 600;
   border-color: #2ecc71;
 }
 
 .risk-option input[type="checkbox"]:checked + label[data-severity="chemical"] {
-  background-color: #f39c12;
+  background-color: #f39c12; /* Orange vif */
   color: #fff;
   font-weight: 600;
   border-color: #f39c12;
@@ -163,7 +163,7 @@ label[data-severity="infrastructure"]:hover {
 }
 
 .risk-option input[type="checkbox"]:checked + label {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
 button {
