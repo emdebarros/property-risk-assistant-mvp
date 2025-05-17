@@ -1,6 +1,6 @@
 {
   "name": "Vérificateur de risques immobiliers",
-  "short_name": "Risques Immo",
+  "short_name": "Vérificateur Immo",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",

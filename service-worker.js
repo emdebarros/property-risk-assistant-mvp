@@ -10,6 +10,9 @@ self.addEventListener('install', event => {
                 '/risques.html',
                 '/style.css',
                 '/script.js',
+                '/loadLayout.js',
+                '/header.html',
+                '/footer.html',
                 '/manifest.json',
                 '/favicon_io/android-chrome-192x192.png',
                 '/favicon_io/android-chrome-512x512.png',
@@ -18,7 +21,7 @@ self.addEventListener('install', event => {
                 '/favicon_io/favicon-32x32.png',
                 '/favicon_io/favicon.ico'
             ]);
-        })
+        });
     );
 });
 
