@@ -1,6 +1,5 @@
 
-⚠️ Deployment is managed by Firebase Hosting.
-Do not use GitHub Pages — it is intentionally disabled.
+> ⚠️ **WARNING:** Deployment is managed by Firebase Hosting. Do not use GitHub Pages — it is intentionally disabled.
 
 # Vérificateur de risques pour propriétés au Québec
 
