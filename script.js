@@ -224,7 +224,12 @@ form.addEventListener('submit', function(event) {
     
   });
 
+  resultsDiv.style.display = 'block';
   resultsDiv.innerHTML = output;
+
+  setTimeout(() => {
+  resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}, 100); // petit délai pour laisser le DOM se mettre à jour
 });
 
 function copyAddress() {
