@@ -1,5 +1,5 @@
 // Update this version to force a new cache build
-const CACHE_NAME = 'avivo-app-risk-checker-cache-v1';
+const CACHE_NAME = 'avivo-app-risk-checker-cache-v2';
 
 // Install event: cache essential files
 self.addEventListener('install', event => {
