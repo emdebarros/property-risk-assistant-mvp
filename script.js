@@ -246,3 +246,10 @@ function copyAddress() {
       console.error('Erreur de copie : ', err);
     });
 }
+
+// ✅ Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(reg => console.log('✅ Service worker registered:', reg.scope))
+    .catch(err => console.error('❌ Service worker failed:', err));
+}
