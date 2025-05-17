@@ -122,11 +122,41 @@ input[type="text"]:focus {
   border-color: #A3C8F0;
 }
 
-.risk-option input[type="checkbox"]:checked + label {
-  background-color: #0069D9;
-  color: white;
-  border-color: #0069D9;
+/* === HOVER PAR GRAVITÉ === */
+label[data-severity="high"]:hover {
+  background-color: #f4bebe;
+  border-color: #e88c8a;
 }
+
+label[data-severity="medium"]:hover {
+  background-color: #fde3b8;
+  border-color: #f6c57a;
+}
+
+label[data-severity="low"]:hover {
+  background-color: #d4f4c7;
+  border-color: #98d98b;
+}
+
+/* === COULEURS COHÉRENTES AVEC LE TITRE DE CATÉGORIE === */
+.risk-option input[type="checkbox"]:checked + label[data-severity="high"] {
+  background-color: #d9534f; /* rouge */
+  color: #fff;
+  border-color: #d9534f;
+}
+
+.risk-option input[type="checkbox"]:checked + label[data-severity="medium"] {
+  background-color: #f0ad4e; /* orange */
+  color: #000;
+  border-color: #f0ad4e;
+}
+
+.risk-option input[type="checkbox"]:checked + label[data-severity="low"] {
+  background-color: #5cb85c; /* vert */
+  color: #000;
+  border-color: #5cb85c;
+}
+
 
 button {
   display: block;
