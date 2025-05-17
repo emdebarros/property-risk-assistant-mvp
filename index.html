@@ -1,87 +1,113 @@
-<div id="header"></div>
+<!DOCTYPE html>
+<html lang="fr">
 
-<main>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vérificateur de risques immobiliers</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;500&display=swap" rel="stylesheet">
 
-  <h1>Outil de vérification de propriétés 🏡</h1>
-  <p style="text-align: center; color: #899499;">
-    L'objectif de cet outil est de faciliter la diligence raisonnable pour les agents et acheteurs en centralisant les
-    outils de vérification des risques pour une propriété sur un territoire donné.
-  </p>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="shortcut icon" href="favicon_io/favicon.ico">
 
-  <form id="verifyForm">
-    <label for="address">Entrez l'adresse de la propriété :</label>
-    <input type="text" id="address" placeholder="Ex : 123 Rue Principale, Laval" required>
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
 
-    <p>Sélectionnez les catégories de risques que vous souhaitez vérifier :</p>
+  <!-- Android Chrome Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
 
-    <fieldset id="checkboxes-group" style="border: none; padding: 0;">
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0069D9">
 
-      <div class="risk-group">
-        <p class="severity-title high">Risques Élevés</p>
-        <div class="checkbox-group">
-          <div class="risk-option">
-            <input type="checkbox" id="flood" name="category" value="flood">
-            <label for="flood">🌊 Inondation</label>
-          </div>
-          <div class="risk-option">
-            <input type="checkbox" id="contamination" name="category" value="contamination">
-            <label for="contamination">🧪 Contamination du sol</label>
-          </div>
-          <div class="risk-option">
-            <input type="checkbox" id="landslide" name="category" value="landslide">
-            <label for="landslide">🪨 Glissement de terrain</label>
-          </div>
-        </div>
-      </div>
+</head>
 
-      <div class="risk-group">
-        <p class="severity-title medium">Risques Moyens</p>
-        <div class="checkbox-group">
-          <div class="risk-option">
-            <input type="checkbox" id="lead" name="category" value="lead">
-            <label for="lead">🚰 Plomb dans l’eau</label>
-          </div>
-          <div class="risk-option">
-            <input type="checkbox" id="radon" name="category" value="radon">
-            <label for="radon">🏠 Radon</label>
-          </div>
-          <div class="risk-option">
-            <input type="checkbox" id="landfill" name="category" value="landfill">
-            <label for="landfill">🗑️ Site d’enfouissement</label>
-          </div>
-        </div>
-      </div>
+<body>
+  <div class="container">
 
-      <div class="risk-group">
-        <p class="severity-title low">Risques Faibles</p>
-        <div class="checkbox-group">
-          <div class="risk-option">
-            <input type="checkbox" id="pipelines" name="category" value="pipelines">
-            <label for="pipelines">🛢️ Pipelines</label>
-          </div>
-          <div class="risk-option">
-            <input type="checkbox" id="urbanism" name="category" value="urbanism">
-            <label for="urbanism">🏘️ Urbanisme</label>
-          </div>
-          <div class="risk-option">
-            <!--empty-->
+    <h1>Outil de vérification de propriétés 🏡</h1>
+    <p style="text-align: center; color: #899499;">
+      L'objectif de cet outil est de faciliter la diligence raisonnable pour les agents et acheteurs en centralisant les
+      outils de vérification des risques pour une propriété sur un territoire donné.
+    </p>
+
+    <form id="verifyForm">
+      <label for="address">Entrez l'adresse de la propriété :</label>
+      <input type="text" id="address" placeholder="Ex : 123 Rue Principale, Laval" required>
+
+      <p>Sélectionnez les catégories de risques que vous souhaitez vérifier :</p>
+
+      <fieldset id="checkboxes-group" style="border: none; padding: 0;">
+
+        <div class="risk-group">
+          <p class="severity-title high">Risques Élevés</p>
+          <div class="checkbox-group">
+            <div class="risk-option">
+              <input type="checkbox" id="flood" name="category" value="flood">
+              <label for="flood">🌊 Inondation</label>
+            </div>
+            <div class="risk-option">
+              <input type="checkbox" id="contamination" name="category" value="contamination">
+              <label for="contamination">🧪 Contamination du sol</label>
+            </div>
+            <div class="risk-option">
+              <input type="checkbox" id="landslide" name="category" value="landslide">
+              <label for="landslide">🪨 Glissement de terrain</label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="error-message">
-        Veuillez sélectionner au moins une catégorie à vérifier.
-      </div>
+        <div class="risk-group">
+          <p class="severity-title medium">Risques Moyens</p>
+          <div class="checkbox-group">
+            <div class="risk-option">
+              <input type="checkbox" id="lead" name="category" value="lead">
+              <label for="lead">🚰 Plomb dans l’eau</label>
+            </div>
+            <div class="risk-option">
+              <input type="checkbox" id="radon" name="category" value="radon">
+              <label for="radon">🏠 Radon</label>
+            </div>
+            <div class="risk-option">
+              <input type="checkbox" id="landfill" name="category" value="landfill">
+              <label for="landfill">🗑️ Site d’enfouissement</label>
+            </div>
+          </div>
+        </div>
 
-      <small style="display: block; text-align: right; margin-top: 30px;">
-        <a href="risques.html" target="_blank" style="font-size: 14px;">🔎 Plus d'information sur la classification
-          des risques</a>
-      </small>
-    </fieldset>
+        <div class="risk-group">
+          <p class="severity-title low">Risques Faibles</p>
+          <div class="checkbox-group">
+            <div class="risk-option">
+              <input type="checkbox" id="pipelines" name="category" value="pipelines">
+              <label for="pipelines">🛢️ Pipelines</label>
+            </div>
+            <div class="risk-option">
+              <input type="checkbox" id="urbanism" name="category" value="urbanism">
+              <label for="urbanism">🏘️ Urbanisme</label>
+            </div>
+            <div class="risk-option">
+              <!--empty-->
+            </div>
+          </div>
+        </div>
 
-    <br>
-    <button type="submit">Vérifier la propriété</button>
-  </form>
+        <div id="error-message">
+          Veuillez sélectionner au moins une catégorie à vérifier.
+        </div>
+
+        <small style="display: block; text-align: right; margin-top: 30px;">
+          <a href="risques.html" target="_blank" style="font-size: 14px;">🔎 Plus d'information sur la classification
+            des risques</a>
+        </small>
+      </fieldset>
+
+      <br>
+      <button type="submit">Vérifier la propriété</button>
+    </form>
 
   </div>
 
@@ -111,8 +137,13 @@
     </p>
   </div>
 
-</main>
+  </div>
 
-<div id="footer"></div>
+  <footer style="text-align: center; font-size: 14px; color: #999; margin-top: 40px; padding-bottom: 20px;">
+    © 2025 AVIVO — Tous droits réservés. | Développé avec 🧡 au Québec.
+  </footer>
 
-<script src="loadLayout.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
