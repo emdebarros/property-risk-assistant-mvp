@@ -1,3 +1,7 @@
+
+⚠️ Deployment is managed by Firebase Hosting.
+Do not use GitHub Pages — it is intentionally disabled.
+
 # Vérificateur de risques pour propriétés au Québec
 
 Ce projet est un outil web simple et interactif conçu pour aider les professionnels de l’immobilier à vérifier les risques associés à une propriété résidentielle ou commerciale. Il propose une sélection de liens officiels (gouvernementaux et municipaux) organisés par catégorie (inondation, contamination du sol, radon, urbanisme, etc.) et par région (Grand Montréal, Laval, couronne nord...) (plus de régions à venir).
