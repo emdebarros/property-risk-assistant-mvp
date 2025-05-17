@@ -140,21 +140,28 @@ label[data-severity="low"]:hover {
 
 /* === COULEURS COHÉRENTES AVEC LE TITRE DE CATÉGORIE === */
 .risk-option input[type="checkbox"]:checked + label[data-severity="high"] {
-  background-color: #f19997; /* plus clair que #d9534f */
+  background-color: #e74c3c; /* Rouge vif */
   color: #fff;
-  border-color: #f19997;
+  font-weight: 500;
+  border-color: #e74c3c;
 }
 
 .risk-option input[type="checkbox"]:checked + label[data-severity="medium"] {
-  background-color: #fcd18a; /* plus clair que #f0ad4e */
-  color: #000;
-  border-color: #fcd18a;
+  background-color: #f39c12; /* Orange vif */
+  color: #fff;
+  font-weight: 500;
+  border-color: #f39c12;
 }
 
 .risk-option input[type="checkbox"]:checked + label[data-severity="low"] {
-  background-color: #9ddf94; /* plus clair que #5cb85c */
-  color: #000;
-  border-color: #9ddf94;
+  background-color: #2ecc71; /* Vert vif */
+  color: #fff;
+  font-weight: 500;
+  border-color: #2ecc71;
+}
+
+.risk-option input[type="checkbox"]:checked + label {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
 button {
