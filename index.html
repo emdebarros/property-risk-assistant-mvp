@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#18375F">
   <title>Vérificateur de risques immobiliers</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
@@ -33,10 +33,10 @@
 <body>
   <div class="container">
 
-    <h1>Outil de vérification de propriétés 🏡</h1>
+    <h1>Vérificateur de terrain 🏡</h1>
     <p style="text-align: center; color: #899499;">
-      L'objectif de cet outil est de faciliter la diligence raisonnable pour les agents et acheteurs en centralisant les
-      outils de vérification des risques pour une propriété sur un territoire donné.
+      L'objectif de cet outil est de faciliter la diligence raisonnable pour les courtiers immobiliers en centralisant
+      les outils de vérification des risques pour une propriété sur un territoire donné.
     </p>
 
     <form id="verifyForm">
@@ -47,55 +47,58 @@
 
       <fieldset id="checkboxes-group" style="border: none; padding: 0;">
 
+        <!-- Risques environnementaux -->
         <div class="risk-group">
-          <p class="severity-title high">Risques Élevés</p>
+          <p class="severity-title environmental">Risques environnementaux</p>
           <div class="checkbox-group">
             <div class="risk-option">
               <input type="checkbox" id="flood" name="category" value="flood">
-              <label for="flood" data-severity="high">🌊 Inondation</label>
-            </div>
-            <div class="risk-option">
-              <input type="checkbox" id="contamination" name="category" value="contamination">
-              <label for="contamination" data-severity="high">🧪 Contamination du sol</label>
+              <label for="flood" data-severity="environmental">🌊 Inondation</label>
             </div>
             <div class="risk-option">
               <input type="checkbox" id="landslide" name="category" value="landslide">
-              <label for="landslide" data-severity="high">🪨 Glissement de terrain</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="risk-group">
-          <p class="severity-title medium">Risques Moyens</p>
-          <div class="checkbox-group">
-            <div class="risk-option">
-              <input type="checkbox" id="lead" name="category" value="lead">
-              <label for="lead" data-severity="medium">🚰 Plomb dans l’eau</label>
-            </div>
-            <div class="risk-option">
-              <input type="checkbox" id="radon" name="category" value="radon">
-              <label for="radon" data-severity="medium">☣️ Radon</label>
+              <label for="landslide" data-severity="environmental">🪨 Glissement de terrain</label>
             </div>
             <div class="risk-option">
               <input type="checkbox" id="landfill" name="category" value="landfill">
-              <label for="landfill" data-severity="medium">🗑️ Site d’enfouissement</label>
+              <label for="landfill" data-severity="environmental">🗑️ Site d’enfouissement</label>
             </div>
           </div>
         </div>
 
+        <!-- Risques chimiques -->
         <div class="risk-group">
-          <p class="severity-title low">Risques Faibles</p>
+          <p class="severity-title chemical">Risques chimiques</p>
+          <div class="checkbox-group">
+            <div class="risk-option">
+              <input type="checkbox" id="contamination" name="category" value="contamination">
+              <label for="contamination" data-severity="chemical">🧪 Contamination du sol</label>
+            </div>
+            <div class="risk-option">
+              <input type="checkbox" id="radon" name="category" value="radon">
+              <label for="radon" data-severity="chemical">☣️ Radon</label>
+            </div>
+            <div class="risk-option">
+              <input type="checkbox" id="lead" name="category" value="lead">
+              <label for="lead" data-severity="chemical">🚰 Plomb dans l’eau</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Risques d'infrastructure -->
+        <div class="risk-group">
+          <p class="severity-title infrastructure">Risques d’infrastructure</p>
           <div class="checkbox-group">
             <div class="risk-option">
               <input type="checkbox" id="pipelines" name="category" value="pipelines">
-              <label for="pipelines" data-severity="low">🛢️ Pipelines</label>
+              <label for="pipelines" data-severity="infrastructure">🛢️ Pipelines</label>
             </div>
             <div class="risk-option">
               <input type="checkbox" id="urbanism" name="category" value="urbanism">
-              <label for="urbanism" data-severity="low">🏘️ Urbanisme</label>
+              <label for="urbanism" data-severity="infrastructure">🏘️ Urbanisme</label>
             </div>
             <div class="risk-option">
-              <!--empty-->
+              <!-- DOT NOT REMOVE - Empty div for layout -->
             </div>
           </div>
         </div>
@@ -105,13 +108,16 @@
         </div>
 
         <small style="display: block; text-align: right; margin-top: 30px;">
-          <a href="risques.html" target="_blank" style="font-size: 14px;">🔎 Plus d'information sur la classification
-            des risques</a>
+          <a href="https://avivo-post.notion.site/AVIVO-x-Courtiers-Immobiliers-1f66f3b36e4180499f22f189c97d93be?pvs=4"
+            target="_blank" style="font-size: 14px;">🔎 Plus d'information sur l'outil</a>
         </small>
+
       </fieldset>
 
       <br>
+
       <button type="submit">Vérifier la propriété</button>
+
     </form>
 
   </div>
@@ -119,33 +125,29 @@
   <div id="results" class="result container"></div>
 
   <div class="disclaimer">
-    <p><strong>⚠️ Limitations et avis de non-responsabilité</strong></p>
+    <p><strong>⚠️ Limitations techniques</strong></p>
     <p>
-      1) L’outil ne permet pas encore de vérifier automatiquement les risques à partir de l’adresse saisie. Il ne
-      remplit pas non plus automatiquement les champs de recherche des cartes proposées. L’utilisateur doit copier et
-      coller manuellement l’adresse dans chaque outil de vérification.
+      L’outil ne permet pas encore la vérification automatique des risques à partir de l’adresse saisie. Vous devez
+      copier-coller l’adresse dans chaque carte. De plus, la disponibilité des données dépend de la participation des
+      instances réglementaires et municipales à la publication des cartographies
+      accessibles au public.
     </p>
+
+    <p><strong>📌 Avis de non-responsabilité</strong></p>
     <p>
-      2) Toutes les municipalités du Québec ne sont pas couvertes par toutes les cartes interactives proposées. La
-      disponibilité des données dépend de la participation des MRC et municipalités à la publication d’informations
-      accessibles au public. Pour l’instant, l’outil est principalement pertinent pour les régions du Grand Montréal.
+      Cet outil est conçu pour organiser et présenter de manière accessible les informations déjà disponibles auprès des
+      instances réglementaires et municipales. Il ne remplace pas l’analyse d’un professionnel ni la
+      responsabilité du courtier d’informer adéquatement son client. L’utilisateur demeure responsable des informations
+      transmises.
     </p>
-    <p>
-      3) Cet outil est fourni à titre informatif uniquement. Il ne remplace en aucun cas la responsabilité du courtier
-      immobilier ou du professionnel de vérifier rigoureusement l’ensemble des éléments pertinents à la propriété visée.
-      Il est de la responsabilité du courtier d’effectuer toutes les démarches nécessaires afin d’informer adéquatement
-      son client sur les risques potentiels liés à la propriété, incluant les moyens d’atténuation possibles, afin que
-      ce dernier puisse prendre une décision éclairée.
-    </p>
-    <p>
-      4) L'utilisateur demeure responsable de toute information transmise au client final.
-    </p>
+
   </div>
 
   </div>
 
   <footer style="text-align: center; font-size: 14px; color: #999; margin-top: 40px; padding-bottom: 20px;">
-    © 2025 AVIVO — Tous droits réservés. | Développé avec 🧡 au Québec.
+    © 2025 <a href="https://www.avivo.app/" target="_blank" style="font-size: 14px;">AVIVO</a> — Tous droits réservés. |
+    Développé avec 🧡 au Québec.
   </footer>
 
   <script src="script.js"></script>

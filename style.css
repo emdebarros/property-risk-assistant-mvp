@@ -52,14 +52,16 @@ label {
   opacity: 0.75;
 }
 
-.severity-title.high {
-  color: #d9534f;
+.severity-title.environmental {
+  color: #5cb85c; /* vert doux et accessible */
 }
-.severity-title.medium {
-  color: #f0ad4e;
+
+.severity-title.chemical {
+  color: #f0ad4e; /* orange vif et clair */
 }
-.severity-title.low {
-  color: #5cb85c;
+
+.severity-title.infrastructure {
+  color: #bc8f63; /* brun pâle, chaleureux */
 }
 
 /* FORM & INPUTS */
@@ -123,45 +125,45 @@ input[type="text"]:focus {
 }
 
 /* === HOVER PAR GRAVITÉ === */
-label[data-severity="high"]:hover {
-  background-color: #f4bebe;
-  border-color: #e88c8a;
-}
-
-label[data-severity="medium"]:hover {
-  background-color: #fde3b8;
-  border-color: #f6c57a;
-}
-
-label[data-severity="low"]:hover {
+label[data-severity="environmental"]:hover {
   background-color: #d4f4c7;
   border-color: #98d98b;
 }
 
+label[data-severity="chemical"]:hover {
+  background-color: #fde3b8;
+  border-color: #f6c57a;
+}
+
+label[data-severity="infrastructure"]:hover {
+  background-color: #f3e1d1;
+  border-color: #ddbfa3;
+}
+
 /* === COULEURS COHÉRENTES AVEC LE TITRE DE CATÉGORIE === */
-.risk-option input[type="checkbox"]:checked + label[data-severity="high"] {
-  background-color: #e74c3c; /* Rouge vif */
-  color: #fff;
-  font-weight: 500;
-  border-color: #e74c3c;
-}
-
-.risk-option input[type="checkbox"]:checked + label[data-severity="medium"] {
-  background-color: #f39c12; /* Orange vif */
-  color: #fff;
-  font-weight: 500;
-  border-color: #f39c12;
-}
-
-.risk-option input[type="checkbox"]:checked + label[data-severity="low"] {
+.risk-option input[type="checkbox"]:checked + label[data-severity="environmental"] {
   background-color: #2ecc71; /* Vert vif */
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
   border-color: #2ecc71;
 }
 
+.risk-option input[type="checkbox"]:checked + label[data-severity="chemical"] {
+  background-color: #f39c12; /* Orange vif */
+  color: #fff;
+  font-weight: 600;
+  border-color: #f39c12;
+}
+
+.risk-option input[type="checkbox"]:checked + label[data-severity="infrastructure"] {
+  background-color: #d2a679; /* brun doux plus lumineux */
+  color: #fff;
+  font-weight: 600;
+  border-color: #d2a679;
+}
+
 .risk-option input[type="checkbox"]:checked + label {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
 button {
@@ -207,7 +209,7 @@ small {
 .address-banner {
   background-color: #EAF5FF;
   color: #004085;
-  padding: 16px;
+  padding: 10px;
   border-radius: 6px;
   text-align: center;
   font-weight: 600;
