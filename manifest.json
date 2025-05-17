@@ -1,10 +1,11 @@
 {
   "name": "Vérificateur de risques immobiliers",
-  "short_name": "Vérificateur Immo",
+  "short_name": "Vérificateur Immobilier",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#F6F8FA",
   "theme_color": "#18375F",
+  "description": "UVérificateur de risques immobiliers est une application web progressive qui vous permet de vérifier rapidement les risques potentiels liés à une propriété au Québec : terrains contaminés, inondations, voisinage problématique, etc. Que vous soyez courtier immobilier, acheteur ou investisseur, facilitez votre diligence raisonnable grâce à une interface claire, à jour et accessible directement depuis votre écran d’accueil.",
   "icons": [
     {
       "src": "favicon_io/android-chrome-192x192.png",
